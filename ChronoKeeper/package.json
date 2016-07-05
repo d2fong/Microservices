@@ -2,11 +2,16 @@
   "name": "ChronoKeeper",
   "version": "0.0.0",
   "description": "A timestamp microservice",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/d2fong/microservices.git"
+    "url": "https://github.com/d2fong/Microservices.git"
   },
   "author": "Dylan Fong",
-  "devDependencies": {
+  "dependencies": {
+    "express": "^4.14.0"
   }
 }
