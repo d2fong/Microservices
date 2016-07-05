@@ -1,0 +1,12 @@
+{
+  "name": "ChronoKeeper",
+  "version": "0.0.0",
+  "description": "A timestamp microservice",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d2fong/microservices.git"
+  },
+  "author": "Dylan Fong",
+  "devDependencies": {
+  }
+}
