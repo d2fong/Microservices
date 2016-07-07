@@ -12,11 +12,12 @@ var processQuery = function(queryStr) {
 	if (isNum === true) {
 		var timestamp = parseInt(queryStr);
 		var unixEpoch = moment.unix(timestamp);
-		var naturalDate = unixEpoch.format('MMMM D YYYY')
+		var naturalDate = unixEpoch.format('MMMM D YYYY');
 
-		output["natural"] = naturalDate;
-		output["unix"] = timestamp;
-
+		if(naturalDate !== "Invalid date") {
+			output["natural"] = naturalDate;
+			output["unix"] = timestamp;
+		}
 	} else {
 		var parsedDate = moment(queryStr);
 		if(parsedDate.isValid()) {
