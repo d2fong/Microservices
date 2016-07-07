@@ -1,5 +1,6 @@
 var express = require('express'),
-	moment = require('moment');
+	moment = require('moment'),
+	timestampConverter = require('./timestampConverter.js');
 var app = express();
 
 app.set('view engine', 'ejs');
@@ -14,25 +15,12 @@ app.get('/:timestamp?', function(req, res) {
 	if (typeof(timestamp) === 'undefined') {
 		res.render('default');
 	} else {
-		var respData = processQuery(timestamp);
+		var cleaned = timestamp.replace("%20", " ");
+		var respData = timestampConverter.processQuery(cleaned);
 		res.setHeader('Content-Type', 'application/json');
 		res.send(JSON.stringify(respData));
 	}
 });
-
-// Input: query string
-// Output: the unix timestamp and date corresponding to the string,
-//         null if it does not match a timestamp
-var processQuery = function(queryStr) {
-	var isNum = /^\d+$/.test(queryStr);
-	if (isNum === true) {
-		var timestamp = parseInt(queryStr);
-		var date = moment.unix(timestamp)
-		return date;
-	} else {
-		// TODO: handle the case when a string does not match a number 
-	}
-};
 
 
 app.get('*', function(req, res) {
