@@ -1,5 +1,6 @@
 var moment = require('moment');
 
+
 // Input: query string
 // Output: the unix timestamp and date corresponding to the string,
 //         null if it does not match a timestamp
@@ -14,9 +15,14 @@ var processQuery = function(queryStr) {
 		var unixEpoch = moment.unix(timestamp);
 		var naturalDate = unixEpoch.format('MMMM D YYYY');
 
-		if(naturalDate !== "Invalid date") {
-			output["natural"] = naturalDate;
-			output["unix"] = timestamp;
+		if (timestamp === 0) {
+			output["natural"] = "January 1 1970";
+			output["unix"] = 0;
+		} else {
+			if(naturalDate !== "Invalid date") {
+				output["natural"] = naturalDate;
+				output["unix"] = timestamp;
+			}
 		}
 	} else {
 		var parsedDate = moment(queryStr);
