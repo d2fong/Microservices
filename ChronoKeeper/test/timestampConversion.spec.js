@@ -34,23 +34,23 @@ describe('timestamp conversion', function() {
 		var expectedOutput = [
 			{
 				"unix": 4767811200,
-				"natural": "February 1, 2121"
+				"natural": "February 1 2121"
 			},
 			{
 				"unix": -32432423,
-				"natural": "December 21, 1968"
+				"natural": "December 21 1968"
 			},
 			{
 				"unix": -34234,
-				"natural": "December 31, 1969"
+				"natural": "December 31 1969"
 			},
 			{
 				"unix": -1,
-				"natural": "December 31, 1969"
+				"natural": "December 31 1969"
 			},
 			{
 				"unix": 978307200,
-				"natural": "January 1, 2001"
+				"natural": "January 1 2001"
 			}
 		];
 
