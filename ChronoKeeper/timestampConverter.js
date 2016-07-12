@@ -11,15 +11,32 @@ var processQuery = function(queryStr) {
 		"natural": null
 	};
 	if (isNum === true) {
-		var timestamp = parseInt(queryStr);
-		var unixEpoch = moment.unix(timestamp);
-		var naturalDate = unixEpoch.format('MMMM D YYYY');
+		var months = [
+			'January','February','March',
+			'April','May','June',
+			'July','August','September',
+			'October','November','December'
+		];
 
+		var timestamp = parseInt(queryStr);
 		if (timestamp === 0) {
 			output["natural"] = "January 1 1970";
 			output["unix"] = 0;
 		} else {
-			if(naturalDate !== "Invalid date") {
+			var date = new Date(timestamp*1000);
+			console.log("DATE IS " + date);
+			var month = months[date.getMonth()],
+				day = date.getDate(),
+				year = date.getFullYear(),
+				hour = date.getHours(),
+				min = date.getMinutes(),
+				sec = date.getSeconds();
+				// var unixEpoch = moment.unix(timestamp);
+				// var naturalDate = unixEpoch.format('MMMM D YYYY');
+				var naturalDate = month + ' ' + day + ' ' + year 
+				+ ' ' + hour + ' ' + ' ' + min + ' ' + sec;
+			if(date != "Invalid Date") {
+				console.log("HERE ");
 				output["natural"] = naturalDate;
 				output["unix"] = timestamp;
 			}
