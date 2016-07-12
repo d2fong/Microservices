@@ -24,7 +24,6 @@ var processQuery = function(queryStr) {
 			output["unix"] = 0;
 		} else {
 			var date = new Date(timestamp*1000);
-			console.log("DATE IS " + date);
 			var month = months[date.getMonth()],
 				day = date.getDate(),
 				year = date.getFullYear(),
@@ -33,8 +32,8 @@ var processQuery = function(queryStr) {
 				sec = date.getSeconds();
 				// var unixEpoch = moment.unix(timestamp);
 				// var naturalDate = unixEpoch.format('MMMM D YYYY');
-				var naturalDate = month + ' ' + day + ' ' + year 
-				+ ' ' + hour + ' ' + ' ' + min + ' ' + sec;
+				var naturalDate = month + ' ' + day + ' ' + year;
+				// + ' ' + hour + ' ' + ' ' + min + ' ' + sec;
 			if(date != "Invalid Date") {
 				console.log("HERE ");
 				output["natural"] = naturalDate;
