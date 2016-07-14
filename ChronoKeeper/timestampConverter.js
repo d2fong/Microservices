@@ -30,10 +30,7 @@ var processQuery = function(queryStr) {
 				hour = date.getHours(),
 				min = date.getMinutes(),
 				sec = date.getSeconds();
-				// var unixEpoch = moment.unix(timestamp);
-				// var naturalDate = unixEpoch.format('MMMM D YYYY');
 				var naturalDate = month + ' ' + day + ' ' + year;
-				// + ' ' + hour + ' ' + ' ' + min + ' ' + sec;
 			if(date != "Invalid Date") {
 				console.log("HERE ");
 				output["natural"] = naturalDate;
