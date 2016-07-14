@@ -31,29 +31,29 @@ describe('timestamp conversion', function() {
 
 	it('should correctly map these inputs to outputs', function() {
 		var inputs = ["February 1 2121",
-		 // "-32432423", "34234", "-1", "--1"
+		 "-32432423", "34234", "-1", "--1"
 		];
 		var expectedOutput = [
 			{
 				"unix": 4767829200,
 				"natural": "February 1 2121"
 			},
-			// {
-			// 	"unix": -32432423,
-			// 	"natural": "December 21 1968"
-			// },
-			// {
-			// 	"unix": -34234,
-			// 	"natural": "December 31 1969"
-			// },
-			// {
-			// 	"unix": -1,
-			// 	"natural": "December 31 1969"
-			// },
-			// {
-			// 	"unix": 978307200,
-			// 	"natural": "January 1 2001"
-			// }
+			{
+				"unix": -32432423,
+				"natural": "December 21 1968"
+			},
+			{
+				"unix": -34234,
+				"natural": "December 31 1969"
+			},
+			{
+				"unix": -1,
+				"natural": "December 31 1969"
+			},
+			{
+				"unix": 978307200,
+				"natural": "January 1 2001"
+			}
 		];
 
 		var outputs = inputs.map(function(input) {
